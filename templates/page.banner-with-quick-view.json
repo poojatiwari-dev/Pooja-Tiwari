@@ -15,9 +15,79 @@
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "custom_banner_XjWKHq": {
+      "type": "custom-banner",
+      "name": "Custom Banner",
+      "settings": {
+        "brand_text": "TISSO VISION",
+        "top_text": "Find the ideal gift for your loved ones.",
+        "top_btn_text": "CHOOSE GIFT",
+        "top_btn_link": "",
+        "heading": "The Gift Guide",
+        "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore Our Curated Selection and Find the Perfect Presents to Delight Your Loved Ones This Season.</p>",
+        "button_text": "SHOP NOW",
+        "button_link": "",
+        "bottom_text": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
+      }
+    },
+    "custom_product_grid_BXBBbP": {
+      "type": "custom-product-grid",
+      "blocks": {
+        "gallery_4DGgYa": {
+          "type": "gallery",
+          "settings": {
+            "product": ""
+          }
+        },
+        "gallery_FVMwxT": {
+          "type": "gallery",
+          "settings": {
+            "product": ""
+          }
+        },
+        "gallery_UCQNJ8": {
+          "type": "gallery",
+          "settings": {
+            "product": ""
+          }
+        },
+        "gallery_gpKzqn": {
+          "type": "gallery",
+          "settings": {
+            "product": ""
+          }
+        },
+        "gallery_pzGpXh": {
+          "type": "gallery",
+          "settings": {
+            "product": ""
+          }
+        },
+        "gallery_hYnQJW": {
+          "type": "gallery",
+          "settings": {
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "gallery_4DGgYa",
+        "gallery_FVMwxT",
+        "gallery_UCQNJ8",
+        "gallery_gpKzqn",
+        "gallery_pzGpXh",
+        "gallery_hYnQJW"
+      ],
+      "name": "Tisso Gallery",
+      "settings": {
+        "heading": "Tisso vision in the wild"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_banner_XjWKHq",
+    "custom_product_grid_BXBBbP"
   ]
 }
