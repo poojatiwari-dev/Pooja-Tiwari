@@ -125,14 +125,7 @@
         <source
           media="(max-width:767px)"
           srcset="{{ section.settings.mobile_bg_image | image_url: width: 900 }}">
-            {% else %}
-    <img
-      src="{{ 'mob-placeholder.png' | asset_url }}"
-      alt="Placeholder"
-      class="gift-guide-image"
-       width="{{ section.settings.mobile_bg_image.width }}"
-      height="{{ section.settings.mobile_bg_image.height }}"
-    >
+           
       
       {% endif %}
  <img
