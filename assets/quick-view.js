@@ -82,7 +82,7 @@ if (e.target.id === 'qv-add') {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            bundleItems
+             items: bundleItems
         })
     });
 
