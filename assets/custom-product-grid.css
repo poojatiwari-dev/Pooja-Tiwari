@@ -2,10 +2,11 @@
   padding:60px 0;
 }
 .tisso-gallery-heading{
-  font-size:52px;
+  font-size:36px;
   font-weight:400;
   line-height:1.1;
   margin:0 0 35px;
+  font-family: lustra;
 }
 .tisso-gallery-grid{
   display:grid;
