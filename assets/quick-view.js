@@ -6,9 +6,7 @@
  // OPEN QUICK VIEW
 
  document.addEventListener('click', async function(e) {
-
      const btn = e.target.closest('.quick-view-btn');
-
      if (btn) {
 
          const handle = btn.dataset.handle;
@@ -72,13 +70,9 @@
                  quantity: 1
              })
          });
-
          window.location.href = '/cart';
      }
-
  });
-
-
 
  // SIZE CHANGE
 
