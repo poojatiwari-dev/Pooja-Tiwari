@@ -146,23 +146,34 @@
   z-index: 2;
   text-align: center;
 }
-/* Desktop */
 @media screen and (min-width:768px){
+
+  .gift-guide-banner{
+    position:relative;
+  }
 
   .gift-guide-content{
     position:absolute;
-    left:40px;
-    bottom:90px;
-    max-width:500px;
-    z-index:3;
+    left:60px;
+    bottom:110px;
+    max-width:520px;
+    z-index:5;
+  }
+
+  .gift-guide-heading{
+    font-size:70px;
+    line-height:1;
+    margin:0 0 25px;
+  }
+
+  .gift-guide-description{
+    margin-bottom:35px;
   }
 
   .gift-guide-bg .main-btn{
-    position:absolute;
-    left:40px;
-    bottom:120px;
+    position:static;
     transform:none;
-    z-index:5;
+    margin-top:25px;
   }
 
 }
