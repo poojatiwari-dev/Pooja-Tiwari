@@ -1,23 +1,6 @@
   {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
-<section class="gift-guide-banner">
-  <div class="gift-guide-bg">
-  {% if section.settings.bg_image != blank %}
-    <img
-      src="{{ section.settings.bg_image | image_url: width: 2000 }}"
-      alt="{{ section.settings.heading }}"
-      class="gift-guide-image"
-      width="{{ section.settings.bg_image.width }}"
-      height="{{ section.settings.bg_image.height }}"
-    >
-  {% else %}
-    <img
-      src="{{ 'placeholder-banner.png' | asset_url }}"
-      alt="Placeholder"
-      class="gift-guide-image"
-    >
-  {% endif %}
-</div>
-  <!-- Top Bar -->
+
+   <!-- Top Bar -->
   <div class="gift-guide-top">
     <div class="gift-guide-brand">
       {{ section.settings.brand_text }}
@@ -67,6 +50,27 @@
     {% endif %}
 
   </div>
+<section class="gift-guide-banner">
+  <div class="gift-guide-bg">
+  {% if section.settings.bg_image != blank %}
+    <img
+      src="{{ section.settings.bg_image | image_url: width: 2000 }}"
+      alt="{{ section.settings.heading }}"
+      class="gift-guide-image"
+      width="{{ section.settings.bg_image.width }}"
+      height="{{ section.settings.bg_image.height }}"
+    >
+  {% else %}
+    <img
+      src="{{ 'placeholder-banner.png' | asset_url }}"
+      alt="Placeholder"
+      class="gift-guide-image"
+       width="{{ section.settings.bg_image.width }}"
+      height="{{ section.settings.bg_image.height }}"
+    >
+  {% endif %}
+</div>
+ 
 
 
   <!-- Content -->
