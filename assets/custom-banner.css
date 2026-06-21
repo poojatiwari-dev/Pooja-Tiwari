@@ -149,21 +149,15 @@
 /* MOBILE */
 @media screen and (max-width:767px){
 
-.gift-guide-banner{
-  background:#fff;
-   display:flex;
-  flex-direction:column;
-}
-
 .gift-guide-top{
   padding:12px 15px;
-  justify-content:center;
   text-align:center;
+  justify-content:center;
 }
 
 .gift-guide-brand{
-  font-size:22px;
   width:100%;
+  font-size:22px;
 }
 
 .gift-guide-top-text{
@@ -174,9 +168,15 @@
   display:none;
 }
 
+.gift-guide-banner{
+  display:flex;
+  flex-direction:column;
+}
+
 .gift-guide-content{
-  order:1;
   position:relative;
+  left:auto;
+  bottom:auto;
   max-width:100%;
   padding:20px 15px;
   text-align:center;
@@ -184,24 +184,23 @@
 
 .gift-guide-heading{
   font-size:34px;
-  margin-bottom:12px;
   line-height:1.1;
+  margin:0 0 10px;
 }
 
 .gift-guide-description{
   font-size:13px;
   line-height:1.5;
-  margin-bottom:15px;
+  margin:0;
 }
 
 .gift-guide-bg{
-   order:2;
   position:relative;
 }
 
 .gift-guide-image{
   width:100%;
-  height:260px;
+  height:240px;
   object-fit:cover;
   display:block;
 }
@@ -209,19 +208,16 @@
 .main-btn{
   position:absolute;
   left:50%;
-  bottom:20px;
+  bottom:18px;
   transform:translateX(-50%);
-  padding:12px 22px;
-  font-size:12px;
+  padding:12px 24px;
   z-index:5;
-  white-space:nowrap;
 }
 
 .gift-guide-bottom{
   font-size:10px;
-  padding:5px 10px;
   text-align:center;
-  order:3;
+  padding:6px 10px;
 }
 
 }
