@@ -121,8 +121,10 @@
   width:50%;
 }
 .qv-left img{
-  width:100%;
-  display:block;
+ width: 100%;
+ display: block;
+ height: 166px;
+ object-fit: cover;
 }
 .qv-right{
   width:50%;
@@ -146,13 +148,13 @@
 #qv-price{
   font-size:28px;
   font-weight:700;
-  margin-bottom:20px;
+  margin-bottom:0px;
 }
 
 #qv-description{
   font-size:15px;
   line-height:1.7;
-  margin-bottom:25px;
+  margin-bottom:0px;
 }
 
 .qv-option{
