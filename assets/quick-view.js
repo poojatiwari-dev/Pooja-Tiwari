@@ -77,29 +77,22 @@
  // SIZE CHANGE
 
 document.querySelector('#qv-size').addEventListener('change', function() {
-        findVariant();
+  findVariant();
 });
 
 
  // RENDER OPTIONS
  function renderOptions() {
-
      // Colors
-     const colorsWrap = document.querySelector('#qv-colors');
-     colorsWrap.innerHTML = '';
-     productData.options[1].values.forEach((color, index) => {
-
+    const colorsWrap = document.querySelector('#qv-colors');
+    colorsWrap.innerHTML = '';
+    productData.options[1].values.forEach((color, index) => {
       colorsWrap.innerHTML += `
-
       <button class="qv-color ${index == 0 ? 'active' : ''}" data-value="${color}">
        ${color}
-      </button>
+      </button>`;
+    });
 
-      `;
-
-    }
-
-     );
      // Sizes
      const sizeSelect =
         document.querySelector('#qv-size');
