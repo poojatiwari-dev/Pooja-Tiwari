@@ -44,15 +44,11 @@
 
      // CLOSE
 
-     if (
-
-         e.target.classList.contains('qv-close')
+     if (e.target.classList.contains('qv-close')
 
          ||
 
-         e.target.classList.contains('qv-overlay')
-
-     ) {
+         e.target.classList.contains('qv-overlay')) {
 
          modal.classList.remove('active');
 
