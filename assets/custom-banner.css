@@ -180,7 +180,12 @@
     margin:0 0 25px;
     letter-spacing: 0;
   }
-
+  .desktop-desc p {
+    font-size: 20px;
+    font-family: 'Jost';
+    letter-spacing: 0;
+    font-weight: 400;
+ }
   .gift-guide-description{
     margin-bottom:35px;
   }
