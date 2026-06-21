@@ -154,6 +154,7 @@
   z-index: 2;
   text-align: center;
   font-family: 'Jost';
+  color:#000;
 }
 .mobile-desc{
   display:none;
