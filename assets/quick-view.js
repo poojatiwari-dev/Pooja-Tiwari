@@ -60,6 +60,11 @@
      // ADD TO CART
 
      if (e.target.id === 'qv-add') {
+
+         const color = document.querySelector('.qv-color.active').dataset.value;
+         const size = document.querySelector('#qv-size').value;
+            alert('Selected Color:', color);
+            alert('Selected Size:', size);
          await fetch('/cart/add.js', {
              method: 'POST',
              headers: {
