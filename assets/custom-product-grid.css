@@ -14,8 +14,7 @@
 }
 .gallery-item{
   position:relative;
-  aspect-ratio:1/1;
-  overflow:hidden;
+ 
 }
 .gallery-image{
    width:100%;
