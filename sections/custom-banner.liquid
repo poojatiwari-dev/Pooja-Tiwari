@@ -144,12 +144,12 @@
     >
   {% else %}
     <img
-  src="{{ 'placeholder-banner.png' | asset_url }}"
-  alt="Placeholder"
-  class="gift-guide-image"
- width="{{ section.settings.mobile_bg_image.width }}"
-      height="{{ section.settings.mobile_bg_image.height }}"
->
+      src="{{ 'placeholder-banner.png' | asset_url }}"
+      alt="Placeholder"
+      class="gift-guide-image"
+       width="{{ section.settings.bg_image.width }}"
+      height="{{ section.settings.bg_image.height }}" 
+    />
 
     </picture>
 
