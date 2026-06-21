@@ -63,23 +63,26 @@
 
 if (e.target.id === 'qv-add') {
 
+    const bundleItems = [];
     const color = modal.querySelector('.qv-color.active')?.dataset.value || '';
     const size = modal.querySelector('#qv-size')?.value || '';
-
-
-    52342310764676
-
-    alert('Selected Color: ' + color);
-    alert('Selected Size: ' + size);
-
+    if(color == 'Black' && size == 'M'){
+        bundleItems.push({
+            id: 52342310764676,
+            quantity: 1
+        });
+    }
+        bundleItems.push({
+            id: currentVariant.id,
+            quantity: 1
+        });
     await fetch('/cart/add.js', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            id: currentVariant.id,
-            quantity: 1
+            bundleItems
         })
     });
 
