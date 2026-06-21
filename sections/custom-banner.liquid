@@ -10,7 +10,11 @@
       height="{{ section.settings.bg_image.height }}"
     >
   {% else %}
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'gift-guide-placeholder' }}
+    <img
+      src="{{ 'placeholder-banner.png' | asset_url }}"
+      alt="Placeholder"
+      class="gift-guide-image"
+    >
   {% endif %}
 </div>
   <!-- Top Bar -->
