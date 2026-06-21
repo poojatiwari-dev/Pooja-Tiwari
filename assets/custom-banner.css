@@ -250,9 +250,10 @@
   }
   .mobile-desc{
     display:block;
+    font-family: jost;
   }
 .gift-guide-top{
- 
+  padding:12px 15px;
   text-align:center;
   justify-content:center;
 }
