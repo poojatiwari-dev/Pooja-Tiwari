@@ -50,7 +50,8 @@
   background: #fff;
   padding: 10px 18px;
   font-family: 'Jost';
-    letter-spacing: 0;
+  letter-spacing: 0;
+  color:#000;
 }
 .gift-guide-content {
   position: absolute;
