@@ -24,37 +24,21 @@
          const desc = document.querySelector('#qv-description');
 
          if (desc) {
-
              if (productData.description) {
                  desc.innerHTML = productData.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
                  desc.style.display = 'block';
              } else {
-
                  desc.style.display = 'none';
-
              }
-
          }
 
          // Default First Variant
-
          currentVariant = productData.variants[0];
-
          // Price
-
-         document.querySelector('#qv-price').innerHTML =
-
-             '₹' +
-
-             (currentVariant.price / 100).toFixed(2);
-
-
+         document.querySelector('#qv-price').innerHTML = '₹' + (currentVariant.price / 100).toFixed(2);
          // Render Options
-
          renderOptions();
-
          modal.classList.add('active');
-
      }
 
 
