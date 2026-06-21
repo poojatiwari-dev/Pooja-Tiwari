@@ -51,7 +51,25 @@
 
   </div>
 <section class="gift-guide-banner">
-  
+  <div class="gift-guide-bg">
+  {% if section.settings.bg_image != blank %}
+    <img
+      src="{{ section.settings.bg_image | image_url: width: 2000 }}"
+      alt="{{ section.settings.heading }}"
+      class="gift-guide-image"
+      width="{{ section.settings.bg_image.width }}"
+      height="{{ section.settings.bg_image.height }}"
+    >
+  {% else %}
+    <img
+      src="{{ 'placeholder-banner.png' | asset_url }}"
+      alt="Placeholder"
+      class="gift-guide-image"
+       width="{{ section.settings.bg_image.width }}"
+      height="{{ section.settings.bg_image.height }}"
+    >
+  {% endif %}
+</div>
  <div class="gift-guide-bg">
 
   {% if section.settings.bg_image != blank %}
@@ -183,9 +201,9 @@
       "label": "Background Image"
     },
     {
-      "type": "image_picker",
-      "id": "mobile_bg_image",
-      "label": "Mobile Background Image"
+    "type": "image_picker",
+    "id": "mobile_bg_image",
+    "label": "Mobile Background Image"
     },
     {
       "type": "text",
