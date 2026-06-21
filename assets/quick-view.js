@@ -120,24 +120,28 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
  // FIND SELECTED VARIANT
 
- function findVariant() {
+function findVariant() {
 
-    const color = document.querySelector('.qv-color.active').dataset.value;
-    const size = document.querySelector('#qv-size').value;
-    const variant =
-         productData.variants.find(v => {
-             return (
-                 v.options[0] === color &&
-                 v.options[1] === size
-             );
-         });
+    const color = modal.querySelector('.qv-color.active')?.dataset.value || '';
+    const size = modal.querySelector('#qv-size')?.value || '';
+
+    const variant = productData.variants.find(v => {
+        return (
+            v.options[0] === size &&
+            v.options[1] === color
+        );
+    });
+
     if (variant) {
-         currentVariant = variant;
-         // Update Price
-         document.querySelector('#qv-price').innerHTML = '₹' +(currentVariant.price / 100).toFixed(2);
-         // Update Image
-         if (currentVariant.featured_image) {
-             document.querySelector('#qv-image' ).src = currentVariant.featured_image.src;
-         }
-     }
- }
+
+        currentVariant = variant;
+
+        document.querySelector('#qv-price').innerHTML =
+            '₹' + (currentVariant.price / 100).toFixed(2);
+
+        if (currentVariant.featured_image) {
+            document.querySelector('#qv-image').src =
+                currentVariant.featured_image.src;
+        }
+    }
+}
