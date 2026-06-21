@@ -21,12 +21,14 @@
       "type": "custom-banner",
       "name": "Custom Banner",
       "settings": {
+        "mobile_bg_image": "shopify://shop_images/mob-placeholder.png",
         "brand_text": "TISSO VISION",
         "top_text": "Find the ideal gift for your loved ones",
         "top_btn_text": "CHOOSE GIFT",
         "top_btn_link": "",
         "heading": "The Gift Guide",
         "description": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore Our Curated Selection and Find the Perfect Presents to Delight Your Loved Ones This Season.</p>",
+        "mobile_description": "Discover Joy: Your Ultimate Holiday Gift Destination.",
         "button_text": "SHOP NOW",
         "button_link": "",
         "bottom_text": "SUSTAINABLE, ETHICALLY MADE CLOTHES IN SIZES XXS TO 6XL"
