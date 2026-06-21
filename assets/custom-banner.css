@@ -149,6 +149,10 @@
 .mobile-desc{
   display:none;
 }
+.gift-guide-mobile-top{
+  display:none;
+}
+
 @media screen and (min-width:768px){
 
   .gift-guide-banner{
@@ -182,10 +186,55 @@
 }
 /* MOBILE */
 @media screen and (max-width:767px){
- .desktop-desc{
+  .gift-guide-top{
     display:none;
   }
 
+  .gift-guide-mobile-top{
+    display:block;
+    padding:15px;
+  }
+
+  .gift-guide-mobile-row{
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+    gap:20px;
+    background:#fff;
+    border:1px solid #e5e5e5;
+    padding:14px 18px;
+    margin-bottom:10px;
+    font-weight:700;
+    text-transform:uppercase;
+  }
+
+  .gift-guide-mobile-row span:first-child{
+    font-size:24px;
+    width:30px;
+  }
+
+  .gift-guide-mobile-text{
+    text-align:center;
+    font-size:14px;
+    margin:18px 0;
+  }
+
+  .gift-guide-mobile-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:18px;
+    width:185px;
+    margin:0 auto;
+    padding:12px 20px;
+    background:#f4eb3d;
+    color:#000;
+    text-decoration:none;
+    font-weight:600;
+  }
+ .desktop-desc{
+    display:none;
+  }
   .mobile-desc{
     display:block;
   }
