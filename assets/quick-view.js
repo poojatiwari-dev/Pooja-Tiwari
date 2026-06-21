@@ -44,15 +44,9 @@
 
      // CLOSE
 
-     if (e.target.classList.contains('qv-close')
-
-         ||
-
-         e.target.classList.contains('qv-overlay')) {
-
-         modal.classList.remove('active');
-
-     }
+    if (e.target.classList.contains('qv-close') || e.target.classList.contains('qv-overlay')) {
+        modal.classList.remove('active');
+    }
 
 
      // COLOR CHANGE
