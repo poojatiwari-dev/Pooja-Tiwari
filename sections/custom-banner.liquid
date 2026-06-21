@@ -172,7 +172,29 @@
 
 </section>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
 
+  const trigger = document.querySelector('.gift-guide-mobile-trigger');
+  const content = document.querySelector('.gift-guide-mobile-content');
+  const closeBtn = document.querySelector('.gift-guide-mobile-close');
+
+  if(trigger && content){
+    trigger.addEventListener('click', function(){
+      content.classList.add('active');
+      trigger.style.display = 'none';
+    });
+  }
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      content.classList.remove('active');
+      trigger.style.display = 'flex';
+    });
+  }
+
+});
+</script>
 
 {% schema %}
 {
