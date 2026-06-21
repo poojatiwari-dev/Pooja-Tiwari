@@ -133,10 +133,7 @@
 }
 /* BOTTOM STRIP */
 .gift-guide-bottom {
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: relative;
   background: #fff;
   padding: 6px 20px;
   font-size: 16px;
