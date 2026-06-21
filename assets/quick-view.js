@@ -6,307 +6,145 @@
  // OPEN QUICK VIEW
 
  document.addEventListener('click', async function(e) {
-
      const btn = e.target.closest('.quick-view-btn');
-
      if (btn) {
 
          const handle = btn.dataset.handle;
-
          const response = await fetch(`/products/${handle}.js`);
-
          productData = await response.json();
-
          // Title
-         document.querySelector('#qv-title').innerHTML =
-             productData.title;
+         document.querySelector('#qv-title').innerHTML = productData.title;
 
          // Image
-         document.querySelector('#qv-image').src =
-             productData.featured_image;
+         document.querySelector('#qv-image').src = productData.featured_image;
 
          // Description
          const desc = document.querySelector('#qv-description');
 
          if (desc) {
-
              if (productData.description) {
-
-                 desc.innerHTML =
-                     productData.description
-                     .replace(/<[^>]*>/g, '')
-                     .substring(0, 120) + '...';
-
+                 desc.innerHTML = productData.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
                  desc.style.display = 'block';
-
              } else {
-
                  desc.style.display = 'none';
-
              }
-
          }
 
          // Default First Variant
-
          currentVariant = productData.variants[0];
-
          // Price
-
-         document.querySelector('#qv-price').innerHTML =
-
-             '₹' +
-
-             (currentVariant.price / 100).toFixed(2);
-
-
+         document.querySelector('#qv-price').innerHTML = '₹' + (currentVariant.price / 100).toFixed(2);
          // Render Options
-
          renderOptions();
-
          modal.classList.add('active');
-
      }
 
 
      // CLOSE
 
-     if (
+    if (e.target.classList.contains('qv-close') || e.target.classList.contains('qv-overlay')) {
+        modal.classList.remove('active');
+    }
 
-         e.target.classList.contains('qv-close')
+    // COLOR CHANGE
 
-         ||
-
-         e.target.classList.contains('qv-overlay')
-
-     ) {
-
-         modal.classList.remove('active');
-
+    if (e.target.classList.contains('qv-color')) {
+        document.querySelectorAll('.qv-color').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        findVariant();
      }
 
 
-     // COLOR CHANGE
+// ADD TO CART
+if (e.target.id === 'qv-add') {
 
-     if (e.target.classList.contains('qv-color')) {
+    const bundleItems = [];
+    const color = modal.querySelector('.qv-color.active')?.dataset.value || '';
+    const size = modal.querySelector('#qv-size')?.value || '';
+    if(color == 'Black' && size == 'M'){
+        bundleItems.push({
+            id: 52342310764676,
+            quantity: 1
+        });
+    }
+        bundleItems.push({
+            id: currentVariant.id,
+            quantity: 1
+        });
+    await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+             items: bundleItems
+        })
+    });
 
-         document
+    window.location.href = '/cart';
+}
 
-             .querySelectorAll('.qv-color')
-
-             .forEach(btn => {
-
-                 btn.classList.remove('active');
-
-             });
-
-         e.target.classList.add('active');
-
-         findVariant();
-
-     }
-
-
-     // ADD TO CART
-
-     if (e.target.id === 'qv-add') {
-
-         await fetch('/cart/add.js', {
-
-             method: 'POST',
-
-             headers: {
-
-                 'Content-Type': 'application/json'
-
-             },
-
-             body: JSON.stringify({
-
-                 id: currentVariant.id,
-
-                 quantity: 1
-
-             })
-
-         });
-
-         window.location.href = '/cart';
-
-     }
 
  });
 
-
-
  // SIZE CHANGE
 
- document
-
-     .querySelector('#qv-size')
-
-     .addEventListener(
-
-         'change',
-
-         function() {
-
-             findVariant();
-
-         });
-
-
+document.querySelector('#qv-size').addEventListener('change', function() {
+  findVariant();
+});
 
 
  // RENDER OPTIONS
-
  function renderOptions() {
-
      // Colors
-
-     const colorsWrap =
-
-         document.querySelector('#qv-colors');
-
-     colorsWrap.innerHTML = '';
-
-     productData.options[0].values.forEach(
-
-         (color, index) => {
-
-             colorsWrap.innerHTML += `
-
-      <button
-
-      class="qv-color ${index == 0 ? 'active' : ''}"
-
-      data-value="${color}"
-
-      >
-
-      ${color}
-
-      </button>
-
-      `;
-
-         }
-
-     );
-
+    const colorsWrap = document.querySelector('#qv-colors');
+    colorsWrap.innerHTML = '';
+    productData.options[1].values.forEach((color, index) => {
+      colorsWrap.innerHTML += `
+      <button class="qv-color ${index == 0 ? 'active' : ''}" data-value="${color}">
+       ${color}
+      </button>`;
+    });
 
      // Sizes
-
      const sizeSelect =
-
-         document.querySelector('#qv-size');
-
-     sizeSelect.innerHTML = '';
-
-     productData.options[1].values.forEach(
-
-         size => {
-
+        document.querySelector('#qv-size');
+        sizeSelect.innerHTML = '';
+        productData.options[0].values.forEach( size => {
              sizeSelect.innerHTML += `
-
-      <option value="${size}">
-
-      ${size}
-
-      </option>
-
-      `;
-
-         }
-
-     );
-
+                <option value="${size}">
+                ${size}
+                </option>`;
+         });
  }
 
 
  // FIND SELECTED VARIANT
 
- function findVariant() {
+function findVariant() {
 
-     const color =
+    const color = modal.querySelector('.qv-color.active')?.dataset.value || '';
+    const size = modal.querySelector('#qv-size')?.value || '';
 
-         document.querySelector(
+    const variant = productData.variants.find(v => {
+        return (
+            v.options[0] === size &&
+            v.options[1] === color
+        );
+    });
 
-             '.qv-color.active'
+    if (variant) {
 
-         ).dataset.value;
+        currentVariant = variant;
 
+        document.querySelector('#qv-price').innerHTML =
+            '₹' + (currentVariant.price / 100).toFixed(2);
 
-     const size =
-
-         document.querySelector(
-
-             '#qv-size'
-
-         ).value;
-
-
-     const variant =
-
-         productData.variants.find(v => {
-
-             return (
-
-                 v.options[0] === color &&
-
-                 v.options[1] === size
-
-             );
-
-         });
-
-
-     if (variant) {
-
-         currentVariant = variant;
-
-
-         // Update Price
-
-         document.querySelector(
-
-                 '#qv-price'
-
-             ).innerHTML =
-
-             '₹' +
-
-             (
-
-                 currentVariant.price
-
-                 /
-
-                 100
-
-             )
-
-             .toFixed(2);
-
-
-         // Update Image
-
-         if (
-
-             currentVariant.featured_image
-
-         ) {
-
-             document.querySelector(
-
-                     '#qv-image'
-
-                 ).src =
-
-                 currentVariant.featured_image.src;
-
-         }
-
-     }
-
- }
+        if (currentVariant.featured_image) {
+            document.querySelector('#qv-image').src =
+                currentVariant.featured_image.src;
+        }
+    }
+}
