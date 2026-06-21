@@ -76,25 +76,12 @@
 
  // SIZE CHANGE
 
- document
-
-     .querySelector('#qv-size')
-
-     .addEventListener(
-
-         'change',
-
-         function() {
-
-             findVariant();
-
-         });
-
-
+document.querySelector('#qv-size').addEventListener('change', function() {
+        findVariant();
+});
 
 
  // RENDER OPTIONS
-
  function renderOptions() {
 
      // Colors
