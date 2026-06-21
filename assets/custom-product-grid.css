@@ -113,6 +113,10 @@
   background:
   rgba(0,0,0,.5);
 }
+.qv-box_center {
+    display: inline-flex;
+    gap: 20px;
+}
 .qv-left{
   width:50%;
 }
