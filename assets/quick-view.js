@@ -107,8 +107,7 @@ document.querySelector('#qv-size').addEventListener('change', function() {
      const sizeSelect =
 
          document.querySelector('#qv-size');
-
-     sizeSelect.innerHTML = '';
+         sizeSelect.innerHTML = '';
 
      productData.options[0].values.forEach(
 
@@ -135,23 +134,9 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
  function findVariant() {
 
-     const color =
+     const color = document.querySelector('.qv-color.active').dataset.value;
 
-         document.querySelector(
-
-             '.qv-color.active'
-
-         ).dataset.value;
-
-
-     const size =
-
-         document.querySelector(
-
-             '#qv-size'
-
-         ).value;
-
+     const size = document.querySelector('#qv-size').value;
 
      const variant =
 
@@ -172,48 +157,14 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
          currentVariant = variant;
 
-
          // Update Price
-
-         document.querySelector(
-
-                 '#qv-price'
-
-             ).innerHTML =
-
-             '₹' +
-
-             (
-
-                 currentVariant.price
-
-                 /
-
-                 100
-
-             )
-
-             .toFixed(2);
-
+         document.querySelector('#qv-price').innerHTML = '₹' +(currentVariant.price / 100).toFixed(2);
 
          // Update Image
 
-         if (
-
-             currentVariant.featured_image
-
-         ) {
-
-             document.querySelector(
-
-                     '#qv-image'
-
-                 ).src =
-
-                 currentVariant.featured_image.src;
-
+         if (currentVariant.featured_image) {
+             document.querySelector('#qv-image' ).src = currentVariant.featured_image.src;
          }
-
      }
 
  }
