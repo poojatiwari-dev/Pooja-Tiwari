@@ -101,7 +101,7 @@ document.querySelector('#qv-size').addEventListener('change', function() {
      // Sizes
      const sizeSelect =
         document.querySelector('#qv-size');
-        sizeSelect.innerHTML = '';\
+        sizeSelect.innerHTML = '';
         productData.options[0].values.forEach( size => {
              sizeSelect.innerHTML += `
                 <option value="${size}">
