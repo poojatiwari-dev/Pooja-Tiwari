@@ -66,6 +66,9 @@ if (e.target.id === 'qv-add') {
     const color = modal.querySelector('.qv-color.active')?.dataset.value || '';
     const size = modal.querySelector('#qv-size')?.value || '';
 
+
+    52342310764676
+
     alert('Selected Color: ' + color);
     alert('Selected Size: ' + size);
 
