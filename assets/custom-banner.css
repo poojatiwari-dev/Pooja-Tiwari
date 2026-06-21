@@ -237,8 +237,7 @@
 }
 
 .gift-guide-brand{
-  width:100%;
-  font-size:22px;
+  display:none;
 }
 
 .gift-guide-top-text{
