@@ -186,45 +186,40 @@
 }
 /* MOBILE */
 @media screen and (max-width:767px){
-  .gift-guide-top{
-    display:none;
-  }
+  @media screen and (max-width:767px){
 
   .gift-guide-mobile-top{
     display:block;
-    padding:15px;
   }
 
-  .gift-guide-mobile-row{
+  .gift-guide-mobile-content{
+    display:none;
+  }
+
+  .gift-guide-mobile-trigger,
+  .gift-guide-mobile-close{
     display:flex;
     align-items:center;
-    justify-content:flex-start;
     gap:20px;
-    background:#fff;
-    border:1px solid #e5e5e5;
     padding:14px 18px;
-    margin-bottom:10px;
+    border:1px solid #e5e5e5;
+    background:#fff;
     font-weight:700;
     text-transform:uppercase;
-  }
-
-  .gift-guide-mobile-row span:first-child{
-    font-size:24px;
-    width:30px;
+    cursor:pointer;
   }
 
   .gift-guide-mobile-text{
     text-align:center;
-    font-size:14px;
-    margin:18px 0;
+    margin:20px 0;
   }
 
   .gift-guide-mobile-btn{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:18px;
-    width:185px;
+    gap:15px;
+    width:180px;
     margin:0 auto;
     padding:12px 20px;
     background:#f4eb3d;
@@ -232,6 +227,11 @@
     text-decoration:none;
     font-weight:600;
   }
+
+  .gift-guide-mobile-content.active{
+    display:block;
+  }
+}
  .desktop-desc{
     display:none;
   }
