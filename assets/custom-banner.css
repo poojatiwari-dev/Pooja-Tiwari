@@ -191,6 +191,7 @@
   }
   .brand_text_toggle {
     text-align:center;
+    width: 100%;
   }
   .gift-guide-mobile-content{
     display:none;
@@ -199,7 +200,6 @@
   .gift-guide-mobile-close{
     display:flex;
     align-items:center;
-    gap:20px;
     padding:14px 18px;
     border:1px solid #e5e5e5;
     background:#fff;
