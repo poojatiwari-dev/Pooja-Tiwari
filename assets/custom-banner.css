@@ -25,13 +25,9 @@
 }
 .gift-guide-top {
   position: relative;
-  top: 0;
-  left: 30px;
-  right: 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
 }
 .gift-guide-brand {
   font-size: 32px;
