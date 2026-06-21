@@ -84,6 +84,7 @@
   z-index: 2;
   font-size: 16px;
   font-family: 'Jost';
+  letter-spacing: 0;
 }
 .gift-guide-btn svg {
   position: relative;
@@ -321,5 +322,7 @@
   text-align:center;
   padding:6px 10px;
 }
-
+.gift-guide-btn span {
+  font-size: 13px;
+}
 }
