@@ -52,27 +52,31 @@
   </div>
 <div class="gift-guide-mobile-top">
 
-  <div class="gift-guide-mobile-row">
-    <span>☰</span>
+  <div class="gift-guide-mobile-trigger">
+    <span class="menu-icon">☰</span>
     <span>{{ section.settings.brand_text }}</span>
   </div>
 
-  <div class="gift-guide-mobile-row">
-    <span>✕</span>
-    <span>{{ section.settings.brand_text }}</span>
-  </div>
+  <div class="gift-guide-mobile-content">
 
-  <div class="gift-guide-mobile-text">
-    {{ section.settings.top_text }}
-  </div>
+    <div class="gift-guide-mobile-close">
+      <span class="close-icon">✕</span>
+      <span>{{ section.settings.brand_text }}</span>
+    </div>
 
-  <a
-    href="{{ section.settings.top_btn_link }}"
-    class="gift-guide-mobile-btn"
-  >
-    {{ section.settings.top_btn_text }}
-    <span>→</span>
-  </a>
+    <div class="gift-guide-mobile-text">
+      {{ section.settings.top_text }}
+    </div>
+
+    <a
+      href="{{ section.settings.top_btn_link }}"
+      class="gift-guide-mobile-btn"
+    >
+      {{ section.settings.top_btn_text }}
+      <span>→</span>
+    </a>
+
+  </div>
 
 </div>
 
