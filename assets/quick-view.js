@@ -57,10 +57,7 @@
      }
 
 
-     // ADD TO CART
-
-    // ADD TO CART
-
+// ADD TO CART
 if (e.target.id === 'qv-add') {
 
     const bundleItems = [];
