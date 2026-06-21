@@ -186,16 +186,12 @@
 }
 /* MOBILE */
 @media screen and (max-width:767px){
-  @media screen and (max-width:767px){
-
   .gift-guide-mobile-top{
     display:block;
   }
-
   .gift-guide-mobile-content{
     display:none;
   }
-
   .gift-guide-mobile-trigger,
   .gift-guide-mobile-close{
     display:flex;
@@ -208,12 +204,10 @@
     text-transform:uppercase;
     cursor:pointer;
   }
-
   .gift-guide-mobile-text{
     text-align:center;
     margin:20px 0;
   }
-
   .gift-guide-mobile-btn{
     display:flex;
     align-items:center;
@@ -227,11 +221,9 @@
     text-decoration:none;
     font-weight:600;
   }
-
   .gift-guide-mobile-content.active{
     display:block;
   }
-}
  .desktop-desc{
     display:none;
   }
