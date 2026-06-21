@@ -117,35 +117,43 @@
 
 <div class="gift-guide-bg">
 
- {% if section.settings.bg_image != blank %}
+  {% if section.settings.bg_image != blank %}
 
-  <picture>
+    <picture>
 
-    {% if section.settings.mobile_bg_image != blank %}
-      <source
-        media="(max-width:767px)"
-        srcset="{{ section.settings.mobile_bg_image | image_url: width: 900 }}">
-    {% endif %}
-
+      {% if section.settings.mobile_bg_image != blank %}
+        <source
+          media="(max-width:767px)"
+          srcset="{{ section.settings.mobile_bg_image | image_url: width: 900 }}">
+            {% else %}
     <img
+      src="{{ 'mob-placeholder.png' | asset_url }}"
+      alt="Placeholder"
+      class="gift-guide-image"
+       width="{{ section.settings.mobile_bg_image.width }}"
+      height="{{ section.settings.mobile_bg_image.height }}"
+    >
+      
+      {% endif %}
+ <img
       src="{{ section.settings.bg_image | image_url: width: 2000 }}"
       alt="{{ section.settings.heading }}"
       class="gift-guide-image"
       width="{{ section.settings.bg_image.width }}"
       height="{{ section.settings.bg_image.height }}"
     >
+  {% else %}
+    <img
+  src="{{ 'placeholder-banner.png' | asset_url }}"
+  alt="Placeholder"
+  class="gift-guide-image"
+  width="2000"
+  height="1200"
+>
 
-  </picture>
+    </picture>
 
-{% else %}
-
-  <img
-    src="{{ 'placeholder-banner.png' | asset_url }}"
-    alt="Placeholder"
-    class="gift-guide-image"
-  >
-
-{% endif %}
+  {% endif %}
 
 
 
