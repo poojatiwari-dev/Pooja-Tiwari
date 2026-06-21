@@ -97,6 +97,14 @@
         <source
           media="(max-width:767px)"
           srcset="{{ section.settings.mobile_bg_image | image_url: width: 900 }}">
+            {% else %}
+    <img
+      src="{{ 'placeholder-banner.png' | asset_url }}"
+      alt="Placeholder"
+      class="gift-guide-image"
+       width="{{ section.settings.bg_image.width }}"
+      height="{{ section.settings.bg_image.height }}"
+    >
       {% endif %}
  <img
       src="{{ section.settings.bg_image | image_url: width: 2000 }}"
