@@ -126,6 +126,8 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
      const color = document.querySelector('.qv-color.active').dataset.value;
      const size = document.querySelector('#qv-size').value;
+     alert(color);
+     alert(size)
      const variant =
          productData.variants.find(v => {
              return (
@@ -137,7 +139,7 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
      if (variant) {
          currentVariant = variant;
-         
+
          // Update Price
          document.querySelector('#qv-price').innerHTML = '₹' +(currentVariant.price / 100).toFixed(2);
 
