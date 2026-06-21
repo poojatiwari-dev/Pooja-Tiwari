@@ -239,7 +239,7 @@
 .main-btn{
   position:absolute;
   left:50%;
-  bottom:18px;
+  bottom:-200px;
   transform:translateX(-50%);
   padding:12px 24px;
   z-index:5;
