@@ -1,10 +1,7 @@
   {{ 'custom-banner.css' | asset_url | stylesheet_tag }}
 <section class="gift-guide-banner">
-
   <div class="gift-guide-bg">
-
   {% if section.settings.bg_image != blank %}
-
     <img
       src="{{ section.settings.bg_image | image_url: width: 2000 }}"
       alt="{{ section.settings.heading }}"
@@ -12,25 +9,19 @@
       width="{{ section.settings.bg_image.width }}"
       height="{{ section.settings.bg_image.height }}"
     >
-
   {% else %}
-
-    {{ 'hero-apparel-1' | placeholder_svg_tag: 'gift-guide-placeholder' }}
-
+    <img
+      src="{{ 'placeholder-image.png' | asset_url }}"
+      alt="Placeholder Image"
+      class="gift-guide-image"
+    >
   {% endif %}
-
 </div>
-
   <!-- Top Bar -->
-
   <div class="gift-guide-top">
-
     <div class="gift-guide-brand">
-
       {{ section.settings.brand_text }}
-
     </div>
-
     <div class="gift-guide-top-text">
 
       {{ section.settings.top_text }}
