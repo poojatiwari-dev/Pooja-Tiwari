@@ -189,6 +189,9 @@
   .gift-guide-mobile-top{
     display:block;
   }
+  .brand_text_toggle {
+    text-align:ceneter;
+  }
   .gift-guide-mobile-content{
     display:none;
   }
