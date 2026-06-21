@@ -190,8 +190,12 @@
     display:block;
   }
   .brand_text_toggle {
-    text-align:center;
-    width: 100%;
+   text-align: center;
+   width: 100%;
+  font-size: 30px;
+  font-family: 'Jost';
+  font-weight: bold;
+  color: #000;
   }
   .gift-guide-mobile-content{
     display:none;
