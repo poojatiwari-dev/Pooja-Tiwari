@@ -126,8 +126,6 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
      const color = document.querySelector('.qv-color.active').dataset.value;
      const size = document.querySelector('#qv-size').value;
-     alert(color);
-     alert(size)
      const variant =
          productData.variants.find(v => {
              return (
