@@ -65,9 +65,10 @@
   {% endif %}
 
   {% if section.settings.description != blank %}
-    <div class="gift-guide-description">
-      {{ section.settings.description }}
-    </div>
+  <div class="gift-guide-description">
+  <span class="desktop-desc">{{ section.settings.description }}</span>
+  <span class="mobile-desc">{{ section.settings.mobile_description }}</span>
+</div>
   {% endif %}
 
   {% if section.settings.button_text != blank %}
@@ -193,7 +194,12 @@
       "label": "Description",
       "default": "<p>Discover Joy: Your Ultimate Holiday Gift Destination. Explore Our Curated Selection and Find the Perfect Presents to Delight Your Loved Ones This Season.</p>"
     },
-
+    {
+      "type": "text",
+      "id": "mobile_description",
+      "label": "Mobile Description",
+      "default": "Discover Joy: Your Ultimate Holiday Gift Destination."
+    },
     {
       "type": "text",
       "id": "button_text",
