@@ -14,7 +14,8 @@
 }
 .gallery-item{
   position:relative;
- 
+  aspect-ratio:1/1;
+  overflow:hidden;
 }
 .gallery-image{
    width:100%;
@@ -36,11 +37,13 @@
   align-items:center;
   justify-content:center;
   z-index:2;
+  transform:translate(-50%, -50%);
+  transition:all .3s ease;
 }
 .gallery-plus:hover{
-  transform:
-  translate(-50%,-50%)
-  scale(1.1);
+  transform:translate(-50%, -50%) scale(1.1);
+  background:#000;
+  color:#fff;
 }
 /* 1 */
 .gallery-item:nth-child(1) .gallery-plus{
