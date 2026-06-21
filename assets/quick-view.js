@@ -85,34 +85,19 @@ document.querySelector('#qv-size').addEventListener('change', function() {
  function renderOptions() {
 
      // Colors
-
-     const colorsWrap =
-
-         document.querySelector('#qv-colors');
-
+     const colorsWrap = document.querySelector('#qv-colors');
      colorsWrap.innerHTML = '';
+     productData.options[1].values.forEach((color, index) => {
 
-     productData.options[1].values.forEach(
+      colorsWrap.innerHTML += `
 
-         (color, index) => {
-
-             colorsWrap.innerHTML += `
-
-      <button
-
-      class="qv-color ${index == 0 ? 'active' : ''}"
-
-      data-value="${color}"
-
-      >
-
-      ${color}
-
+      <button class="qv-color ${index == 0 ? 'active' : ''}" data-value="${color}">
+       ${color}
       </button>
 
       `;
 
-         }
+    }
 
      );
 
