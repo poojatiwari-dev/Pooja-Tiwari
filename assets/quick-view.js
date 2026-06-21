@@ -110,28 +110,22 @@ document.querySelector('#qv-size').addEventListener('change', function() {
 
  function findVariant() {
 
-     const color = document.querySelector('.qv-color.active').dataset.value;
-     const size = document.querySelector('#qv-size').value;
-     const variant =
+    const color = document.querySelector('.qv-color.active').dataset.value;
+    const size = document.querySelector('#qv-size').value;
+    const variant =
          productData.variants.find(v => {
              return (
                  v.options[0] === color &&
                  v.options[1] === size
              );
          });
-
-
-     if (variant) {
+    if (variant) {
          currentVariant = variant;
-
          // Update Price
          document.querySelector('#qv-price').innerHTML = '₹' +(currentVariant.price / 100).toFixed(2);
-
          // Update Image
-
          if (currentVariant.featured_image) {
              document.querySelector('#qv-image' ).src = currentVariant.featured_image.src;
          }
      }
-
  }
