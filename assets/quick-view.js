@@ -12,18 +12,13 @@
      if (btn) {
 
          const handle = btn.dataset.handle;
-
          const response = await fetch(`/products/${handle}.js`);
-
          productData = await response.json();
-
          // Title
-         document.querySelector('#qv-title').innerHTML =
-             productData.title;
+         document.querySelector('#qv-title').innerHTML = productData.title;
 
          // Image
-         document.querySelector('#qv-image').src =
-             productData.featured_image;
+         document.querySelector('#qv-image').src = productData.featured_image;
 
          // Description
          const desc = document.querySelector('#qv-description');
@@ -31,14 +26,8 @@
          if (desc) {
 
              if (productData.description) {
-
-                 desc.innerHTML =
-                     productData.description
-                     .replace(/<[^>]*>/g, '')
-                     .substring(0, 120) + '...';
-
+                 desc.innerHTML = productData.description.replace(/<[^>]*>/g, '').substring(0, 120) + '...';
                  desc.style.display = 'block';
-
              } else {
 
                  desc.style.display = 'none';
