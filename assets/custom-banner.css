@@ -35,6 +35,7 @@
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  padding: 0 35px;
 }
 .gift-guide-brand {
   font-size: 32px;
