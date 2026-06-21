@@ -29,22 +29,13 @@
 /* PLUS ICON */
 .gallery-plus{
   position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
   width:42px;
   height:42px;
   border-radius:50%;
-  border:none;
   background:#fff;
-  color:#000;
-  cursor:pointer;
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:
-  0 4px 20px rgba(0,0,0,.15);
-  transition:.3s;
   z-index:2;
 }
 .gallery-plus:hover{
@@ -52,7 +43,41 @@
   translate(-50%,-50%)
   scale(1.1);
 }
+/* 1 */
+.gallery-item:nth-child(1) .gallery-plus{
+  top:58%;
+  left:65%;
+}
 
+/* 2 */
+.gallery-item:nth-child(2) .gallery-plus{
+  top:55%;
+  right:14%;
+}
+
+/* 3 */
+.gallery-item:nth-child(3) .gallery-plus{
+  top:20%;
+  right:22%;
+}
+
+/* 4 */
+.gallery-item:nth-child(4) .gallery-plus{
+  top:20%;
+  right:18%;
+}
+
+/* 5 */
+.gallery-item:nth-child(5) .gallery-plus{
+  top:26%;
+  right:18%;
+}
+
+/* 6 */
+.gallery-item:nth-child(6) .gallery-plus{
+  top:34%;
+  right:18%;
+}
 /* PLACEHOLDER */
 
 .gallery-placeholder{
