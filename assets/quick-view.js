@@ -48,25 +48,14 @@
         modal.classList.remove('active');
     }
 
+    // COLOR CHANGE
 
-     // COLOR CHANGE
-
-     if (e.target.classList.contains('qv-color')) {
-
-         document
-
-             .querySelectorAll('.qv-color')
-
-             .forEach(btn => {
-
-                 btn.classList.remove('active');
-
-             });
-
-         e.target.classList.add('active');
-
-         findVariant();
-
+    if (e.target.classList.contains('qv-color')) {
+        document.querySelectorAll('.qv-color').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        e.target.classList.add('active');
+        findVariant();
      }
 
 
