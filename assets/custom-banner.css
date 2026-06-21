@@ -146,6 +146,26 @@
   z-index: 2;
   text-align: center;
 }
+/* Desktop */
+@media screen and (min-width:768px){
+
+  .gift-guide-content{
+    position:absolute;
+    left:40px;
+    bottom:90px;
+    max-width:500px;
+    z-index:3;
+  }
+
+  .gift-guide-bg .main-btn{
+    position:absolute;
+    left:40px;
+    bottom:120px;
+    transform:none;
+    z-index:5;
+  }
+
+}
 /* MOBILE */
 @media screen and (max-width:767px){
 
