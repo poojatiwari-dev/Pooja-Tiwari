@@ -59,25 +59,31 @@
 
      // ADD TO CART
 
-     if (e.target.id === 'qv-add') {
+    // ADD TO CART
 
-         const color = document.querySelector('.qv-color.active').dataset.value;
-         const size = document.querySelector('#qv-size').value;
-         
-            alert('Selected Color:', color);
-            alert('Selected Size:', size);
-         await fetch('/cart/add.js', {
-             method: 'POST',
-             headers: {
-                 'Content-Type': 'application/json'
-             },
-             body: JSON.stringify({
-                 id: currentVariant.id,
-                 quantity: 1
-             })
-         });
-         window.location.href = '/cart';
-     }
+if (e.target.id === 'qv-add') {
+
+    const color = modal.querySelector('.qv-color.active')?.dataset.value || '';
+    const size = modal.querySelector('#qv-size')?.value || '';
+
+    alert('Selected Color: ' + color);
+    alert('Selected Size: ' + size);
+
+    await fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            id: currentVariant.id,
+            quantity: 1
+        })
+    });
+
+    window.location.href = '/cart';
+}
+
+
  });
 
  // SIZE CHANGE
